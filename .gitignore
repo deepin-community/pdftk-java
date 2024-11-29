@@ -1,0 +1,18 @@
+*~
+*#
+*.class
+java/TAGS
+.classpath
+.project
+.settings/
+/.gradle
+/build
+/gradle
+/gradlew
+/bin
+/reference
+# TeX auxiliary files
+test/files/*.aux
+test/files/*.gz
+test/files/*.log
+test/files/*.out

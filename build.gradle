@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.diffplug.spotless' version '6.10.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'org.mikeneck.graalvm-native-image' version '1.4.1'
+}
+
+sourceCompatibility = 1.8
+tasks.withType(JavaCompile) {
+  options.encoding = "UTF-8"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['java']
+        }
+        resources {
+            srcDirs = ['java']
+            include "**/*.afm"
+            include "**/*.txt"
+        }
+    }
+}
+
+mainClassName = 'com.gitlab.pdftk_java.pdftk'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.71'
+}
+
+nativeImage {
+  mainClass = mainClassName
+  executableName = 'pdftk'
+  arguments(
+      '-H:ResourceConfigurationFiles=META-INF/native-image/resource-config.json',
+      '-H:ReflectionConfigurationFiles=META-INF/native-image/reflect-config.json',
+      '--no-fallback',
+      '-H:+AddAllCharsets',
+      '-H:Log=registerResource:',
+      '-H:GenerateDebugInfo=' + (project.hasProperty('generatedebuginfo') ? '1' : '0'),
+  )
+}
+
+spotless {
+    java {
+        target 'java/com/gitlab/pdftk_java/*.java'
+        googleJavaFormat()
+        removeUnusedImports()
+    }
+}

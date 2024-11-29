@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euo pipefail
+
+OUTFILE="$AUTOPKGTEST_TMP/two.pdf"
+pdftk debian/tests/onepage.pdf debian/tests/onepage.pdf output "$OUTFILE"
+pdftk "$OUTFILE" dump_data | grep -q "NumberOfPages: 2"

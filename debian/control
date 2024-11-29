@@ -1,15 +1,39 @@
-Source: template-repository
-Section: unknown
+Source: pdftk-java
+Section: text
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Johann Felix Soden <johfel@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               ant,
+               libbcprov-java,
+               libcommons-lang3-java,
+Standards-Version: 4.6.2
+Homepage: https://gitlab.com/pdftk-java/pdftk
+Vcs-Git: https://gitlab.com/johfel/pdftk.git
+Vcs-Browser: https://gitlab.com/johfel/pdftk
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: pdftk-java
+Architecture: all
+Depends: ${misc:Depends},
+         libbcprov-java,
+         libcommons-lang3-java,
+         default-jre-headless | java8-runtime-headless
+Provides: pdftk
+Suggests: xpdf-utils
+Description: pdftk port to java - a tool for manipulating PDF documents
+ If PDF is electronic paper, then PDFtk is an electronic stapler-remover,
+ hole-punch, binder, secret-decoder-ring, and X-Ray-glasses. PDFtk is a
+ simple tool for doing everyday things with PDF documents. Keep one in the
+ top drawer of your desktop and use it to:
+  - Merge PDF documents
+  - Split PDF pages into a new document
+  - Decrypt input as necessary (password required)
+  - Encrypt output as desired
+  - Fill PDF Forms with FDF Data and/or Flatten Forms
+  - Apply a Background Watermark
+  - Report PDF on metrics, including metadata and bookmarks
+  - Update PDF Metadata
+  - Attach Files to PDF Pages or the PDF Document
+  - Unpack PDF Attachments
+  - Burst a PDF document into single pages
+  - Uncompress and re-compress page streams
+  - Repair corrupted PDF (where possible)
