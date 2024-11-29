@@ -1,5 +1,106 @@
-template-repository (1.0-1) unstable; urgency=medium
+pdftk-java (3.3.3-2) unstable; urgency=medium
 
-  * Initial release
+  * Fix FTBFS with new version of bouncycastle.
+    Thanks to Francois Mazen <mzf@debian.org> (Closes: #1057169)
+  * Update Standards-Version to 4.6.2. No changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Johann Felix Soden <johfel@debian.org>  Sun, 17 Dec 2023 11:57:07 +0100
+
+pdftk-java (3.3.3-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update year in debian/copyright.
+
+ -- Johann Felix Soden <johfel@debian.org>  Wed, 28 Jun 2023 23:31:30 +0200
+
+pdftk-java (3.3.2-1) unstable; urgency=medium
+
+  [ Johann Felix Soden]
+  * New upstream version.
+   + Update debian/patches/* and manpage.
+  * Update years in debian/copyright.
+  * Fix paths in debian/copyright.
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + pdftk-java: Drop versioned constraint on pdftk in Replaces.
+    + pdftk-java: Drop versioned constraint on pdftk in Breaks.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Johann Felix Soden <johfel@debian.org>  Sun, 01 May 2022 16:45:14 +0200
+
+pdftk-java (3.2.2-1) unstable; urgency=high
+
+  * New upstream version (Closes: #981477).
+  * Add two autopkgtest tests.
+  * Update years in debian/copyright.
+
+ -- Johann Felix Soden <johfel@debian.org>  Thu, 04 Feb 2021 21:12:08 +0100
+
+pdftk-java (3.1.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * debian/watchL: Fix URL.
+
+ -- Johann Felix Soden <johfel@debian.org>  Fri, 08 May 2020 18:16:25 +0200
+
+pdftk-java (3.0.9-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update Standards-Version to 4.5.0.
+  * debian/watch: Download .tar.gz file instead of .tar file.
+
+ -- Johann Felix Soden <johfel@debian.org>  Wed, 15 Apr 2020 15:13:03 +0200
+
+pdftk-java (3.0.8-1) unstable; urgency=medium
+
+  * New upstream version (Closes: #945502, #956204).
+  * Update Standards-Version to 4.4.1.
+
+ -- Johann Felix Soden <johfel@debian.org>  Thu, 12 Dec 2019 17:27:35 +0100
+
+pdftk-java (3.0.6-1) unstable; urgency=medium
+
+  * New upstream version
+  * Update Standards-Version to 4.4.0.
+
+ -- Johann Felix Soden <johfel@debian.org>  Thu, 29 Aug 2019 20:35:39 +0200
+
+pdftk-java (3.0.2-2) unstable; urgency=high
+
+  * Backport bugfixes from upstream version 3.0.3 (Closes: #919548).
+    - Fix bug which can corrupt images in PDFs.
+    - Fix crash with incomplete metadata records in PDFs.
+  * Add debian/watch file.
+
+ -- Johann Felix Soden <johfel@debian.org>  Tue, 19 Feb 2019 19:47:27 +0100
+
+pdftk-java (3.0.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update Standards-Version to 4.2.1.
+
+ -- Johann Felix Soden <johfel@debian.org>  Sat, 15 Dec 2018 19:12:00 +0100
+
+pdftk-java (0.0.0+20180723.1-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * debian/control:
+    - Update Standards-Version to 4.2.0.
+    - Update upstream homepage.
+    - depend on default-jre-headless (Closes: #905643).
+  * Add patch to fix classpath during build.
+  * Synchronize pdftk-java run script with upstream version.
+  * Remove MPL-1.1 notice from debian/copyright (Closes: #904864).
+  * Build with source/target compatibility 1.8 to support older java runtimes.
+
+ -- Johann Felix Soden <johfel@debian.org>  Sat, 04 Aug 2018 12:01:57 +0200
+
+pdftk-java (0.0.0+20180620.1-1) unstable; urgency=low
+
+  * Initial release. (Closes: #901370) -
+    thanks to Emilio Pozuelo Monfort <pochu@debian.org> for preparing work.
+
+ -- Johann Felix Soden <johfel@debian.org>  Wed, 20 Jun 2018 08:59:23 +0200

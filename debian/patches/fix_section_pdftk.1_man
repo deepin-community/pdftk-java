@@ -1,0 +1,13 @@
+Description: Fix section in man file.
+Author: Johann Felix Soden <johfel@debian.org>
+--- a/pdftk.1
++++ b/pdftk.1
+@@ -2,7 +2,7 @@
+ .\" First parameter, NAME, should be all caps
+ .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+ .\" other parameters are allowed: see man(7), man(1)
+-.TH PDFTK 1 "December 7, 2020"
++.TH pdftk.pdftk-java 1 "December 7, 2020"
+ .\" Please adjust this date whenever revising the manpage.
+ .\"
+ .\" Some roff macros, for reference:
